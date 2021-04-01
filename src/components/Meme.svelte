@@ -22,7 +22,7 @@
 </script>
 
 {#if meme}
-  <div class="card">
+  <div class="card mb-2">
     <div class="card-header">
       {meme.title}
     </div>
@@ -30,8 +30,9 @@
     <div class="card-footer text-muted">
       Author: {meme.author} | reddit.com
     </div>
-    <button on:click={fetchMeme} class="btn btn-primary">Get new one</button>
   </div>
+
+  <button on:click={fetchMeme} class="btn btn-outline-primary w-100">Get new one</button>
 {:else}
   <p>Loading...</p>
 {/if}

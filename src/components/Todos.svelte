@@ -23,9 +23,9 @@
 </script>
 
 <form on:submit|preventDefault={addItem}>
-  <div class="input-group mb-3">
+  <div class="input-group mb-2">
     <input bind:value={newItem} type="text" class="form-control" id="newItem" placeholder="New todo..." />
-    <button type="submit" class="btn btn-primary">Add</button>
+    <button type="submit" class="btn btn-outline-primary">Add</button>
   </div>
 </form>
 
@@ -37,9 +37,9 @@
         : ''}"
     >
       <div>{todo.text}</div>
-      <div>
-        <input class="form-check-input" type="checkbox" bind:checked={todo.status} />
-        <Trash on:click={() => removeItem(index)} />
+      <div class="d-flex align-items-baseline">
+        <input class="form-check-input me-2" type="checkbox" bind:checked={todo.status} />
+        <Trash on:click={() => removeItem(index)} class="text-danger pe-auto" />
       </div>
     </li>
   {/each}

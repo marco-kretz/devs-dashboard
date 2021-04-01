@@ -30,7 +30,11 @@
   }
 </script>
 
-<div class="timer-container d-flex flex-row justify-content-center border rounded mb-2">
+<div
+  class="timer-container d-flex flex-row justify-content-center border rounded mb-2 {isRunning
+    ? 'border-primary'
+    : 'border-danger'}"
+>
   <div class="hours">
     {#if hours < 10}0{/if}{hours}
   </div>
@@ -42,9 +46,9 @@
   </div>
 </div>
 <div class="btn-group w-100" role="group" aria-label="Timer controls">
-  <button on:click={startTimer} disabled={isRunning} class="btn btn-primary">Start</button>
-  <button on:click={stopTimer} disabled={!isRunning} class="btn btn-danger">Stop</button>
-  <button on:click={resetTimer} disabled={!isRunning} class="btn btn-warning">Reset</button>
+  <button on:click={startTimer} disabled={isRunning} class="btn btn-outline-primary">Start</button>
+  <button on:click={stopTimer} disabled={!isRunning} class="btn btn-outline-danger">Stop</button>
+  <button on:click={resetTimer} class="btn btn-outline-warning">Reset</button>
 </div>
 
 <style>

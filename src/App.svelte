@@ -42,7 +42,7 @@
       <h3>Todos</h3>
       <Todos />
     </div>
-    <div class="col-3">
+    <div class="col col-md-3">
       <h3>Random Meme</h3>
       <Meme />
     </div>
