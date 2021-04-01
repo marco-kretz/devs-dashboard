@@ -13,3 +13,10 @@ export const theme = writable(storedTheme);
 theme.subscribe((value) => {
   localStorage.setItem("theme", value === "light" ? "light" : "dark");
 });
+
+// Meme autoload
+const storedMemeAutoload = (localStorage.getItem("memeAutoload") || "true") === "true" ? true : false;
+export const memeAutoload = writable(storedMemeAutoload);
+memeAutoload.subscribe((value) => {
+  localStorage.setItem("memeAutoload", value === true ? "true" : "false");
+});
