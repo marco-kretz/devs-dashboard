@@ -1,4 +1,5 @@
 <script>
+  let isRunning = false;
   let timer = 0;
   let timerInterval = null;
 
@@ -11,6 +12,7 @@
       timerInterval = setInterval(() => {
         timer += 1;
       }, 1000);
+      isRunning = true;
     }
   }
 
@@ -18,6 +20,7 @@
     if (timerInterval !== null) {
       clearInterval(timerInterval);
       timerInterval = null;
+      isRunning = false;
     }
   }
 
@@ -39,9 +42,9 @@
   </div>
 </div>
 <div class="btn-group w-100" role="group" aria-label="Timer controls">
-  <button on:click={startTimer} class="btn btn-primary">Start</button>
-  <button on:click={stopTimer} class="btn btn-danger">Stop</button>
-  <button on:click={resetTimer} class="btn btn-warning">Reset</button>
+  <button on:click={startTimer} disabled={isRunning} class="btn btn-primary">Start</button>
+  <button on:click={stopTimer} disabled={!isRunning} class="btn btn-danger">Stop</button>
+  <button on:click={resetTimer} disabled={!isRunning} class="btn btn-warning">Reset</button>
 </div>
 
 <style>
