@@ -1,0 +1,35 @@
+<script>
+  import { onMount } from "svelte";
+
+  let isLoading = true;
+  let meme = null;
+
+  onMount(() => {
+    fetchMeme();
+  });
+
+  async function fetchMeme() {
+    isLoading = true;
+
+    try {
+      const response = await self.fetch(`https://meme-api.herokuapp.com/gimme`);
+      meme = await response.json();
+      isLoading = false;
+    } catch {
+      throw new Error();
+    }
+  }
+</script>
+
+{#if meme}
+  <div class="card">
+    <div class="card-header">
+      {meme.title}
+    </div>
+    <img src={meme.url} class="card-img-top" alt={meme.title} />
+    <div class="card-footer text-muted">
+      Author: {meme.author} | reddit.com
+    </div>
+    <button on:click={fetchMeme} class="btn btn-primary">Get new one</button>
+  </div>
+{:else}{/if}

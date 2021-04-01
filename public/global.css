@@ -1,0 +1,16 @@
+.meme-card {
+  overflow: hidden;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.meme-card h3 {
+  background-color: #ccc;
+  margin: 0;
+  padding: 5px;
+}
+
+.meme-card img {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
