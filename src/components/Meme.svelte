@@ -26,10 +26,12 @@
     <div class="card-header">
       {meme.title}
     </div>
-    <img src={meme.url} class="card-img-top" alt={meme.title} />
+    <img src={meme.url} class="card-img-top w-100" alt={meme.title} />
     <div class="card-footer text-muted">
       Author: {meme.author} | reddit.com
     </div>
     <button on:click={fetchMeme} class="btn btn-primary">Get new one</button>
   </div>
-{:else}{/if}
+{:else}
+  <p>Loading...</p>
+{/if}

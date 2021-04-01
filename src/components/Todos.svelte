@@ -22,12 +22,10 @@
   }
 </script>
 
-<form on:submit|preventDefault={addItem} class="row g-3">
-  <div class="col">
+<form on:submit|preventDefault={addItem}>
+  <div class="input-group mb-3">
     <input bind:value={newItem} type="text" class="form-control" id="newItem" placeholder="New todo..." />
-  </div>
-  <div class="col-auto">
-    <button type="submit" class="btn btn-primary mb-3">Add</button>
+    <button type="submit" class="btn btn-primary">Add</button>
   </div>
 </form>
 

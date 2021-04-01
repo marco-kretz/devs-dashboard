@@ -32,8 +32,8 @@
 </script>
 
 <Header />
-<main class="container">
-  <div class="row g-3">
+<main class="container mt-4">
+  <div class="row g-4">
     <div class="col">
       <h3>Time Tracking</h3>
       <Timer />
@@ -42,7 +42,7 @@
       <h3>Todos</h3>
       <Todos />
     </div>
-    <div class="col">
+    <div class="col-3">
       <h3>Random Meme</h3>
       <Meme />
     </div>
