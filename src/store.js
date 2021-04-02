@@ -7,6 +7,13 @@ todos.subscribe((value) => {
   localStorage.setItem("todos", JSON.stringify(value.constructor === Array ? value : []));
 });
 
+// Notes
+const storedNotes = JSON.parse(localStorage.getItem("notes")) || [];
+export const notes = writable(storedNotes);
+notes.subscribe((value) => {
+  localStorage.setItem("notes", JSON.stringify(value.constructor === Array ? value : []));
+});
+
 // Theme
 const storedTheme = localStorage.getItem("theme") || "dark";
 export const theme = writable(storedTheme);
